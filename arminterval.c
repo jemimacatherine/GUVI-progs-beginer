@@ -1,26 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int start,end,rem,num,temp,arm=0,i;
-printf("enter the starting and ending interval");
-scanf("%d%d",&start,&end);
-for(i=start;i<=end;i++)
-{
-i=num;
-
-temp=num;
-while(num!=0)
-{
-rem=num%10;
-rem=rem*rem*rem;
-num=num/10;
-arm=arm+rem;
-}
-
-if(temp==arm)
-printf("\n%d",temp);
-
-}
-printf("the above are the armstrong numbers present in between %d and %d",start,end);
-return 0;
+  int n1, n2, i, temp, num, rem;
+  printf("Enter two numbers(intervals): ");
+  scanf("%d %d", &n1, &n2);
+  printf("Armstrong numbers between %d an %d are: ", n1, n2);
+  for(i=n1+1; i<n2; ++i)
+  {
+      temp=i;
+      num=0;
+      while(temp!=0)
+      {
+          rem=(temp%10);
+          num+=rem*rem*rem;
+          temp/=10;
+      }
+      if(i==num)
+      {
+          printf("%d ",i);
+      }
+  }
+  return 0;
 }
